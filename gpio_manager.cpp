@@ -153,7 +153,7 @@ void GPIOManager::setup_gpio(const GPIODescription& gpio) {
 		std::cout << "write failed" << std::cout;
 	}
 	auto mem_function = sigc::mem_fun(*this, &GPIOManager::io_changed);
-	auto callback = sigc::bind<1>(mem_function, gpio.id);
+	auto callback = sigc::bind(mem_function, gpio.id);
 	Glib::signal_io().connect(callback, fd_obj.value_fd, Glib::IO_PRI | Glib::IO_ERR);
 	fd_table.insert(std::make_pair(gpio.id, fd_obj));
 }

@@ -1,0 +1,5 @@
+message SPI {
+	required uint64 device = 1;
+	repeated bytes data = 2;
+	optional uint64 transfer_id = 3;
+}

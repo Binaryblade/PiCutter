@@ -1,0 +1,7 @@
+import "SPI.proto"
+import "GPIO.proto"
+
+message PiCutter {
+	optional GPIO gpio = 1;
+	optional SPI spi = 2;
+}

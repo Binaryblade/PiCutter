@@ -1,0 +1,21 @@
+message GPIO {
+	message GPIO_Description {
+		optional uint32 gpio_id = 1;
+		optional uint32 port_num = 2;
+		optional uint32 pin_num = 3;
+		optional string desc = 4;
+	}
+
+	message GPIO_State {
+		required bool value = 1;
+		enum Direction {
+			Output = 1;
+			Input = 2;
+		}
+		optional Direction direction = 2;
+		optional bool active_low = 3;
+	}
+	
+	required GPIO_Description description = 1;
+	required GPIO_State state = 2;
+}

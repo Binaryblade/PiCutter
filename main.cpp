@@ -1,6 +1,7 @@
 #include "gpio_manager.h"
 #include "spi_manager.h"
 #include "main_loop.h"
+#include "wrapper.pb.h"
 #include <glibmm.h>
 #include <iostream>
 
